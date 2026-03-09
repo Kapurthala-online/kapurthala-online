@@ -1,0 +1,15 @@
+{
+  "name": "kapurthala-online",
+  "version": "1.0.0",
+  "description": "Kapurthala Online — Local Vendor Directory Platform",
+  "scripts": {
+    "install:backend": "cd backend && npm install",
+    "seed": "cd backend && node seed.js",
+    "seed:force": "cd backend && node seed.js --force",
+    "start": "cd backend && node server.js",
+    "dev": "cd backend && npm run dev"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
