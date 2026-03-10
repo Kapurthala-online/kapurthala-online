@@ -253,7 +253,7 @@ const server = http.createServer(async (req, res) => {
   }
 });
 
-server.listen(PORT, () => {
+function startKeepAlive() { const SITE_URL = process.env.RENDER_EXTERNAL_URL || null; if (!SITE_URL) return; setInterval(() => { const mod = require("https"); mod.get(SITE_URL + "/api/health", () => {}).on("error", () => {}); }, 10 * 60 * 1000); console.log("[Keep-Alive] Pinging every 10 min"); }`nserver.listen(PORT, () => { startKeepAlive();
   console.log('');
   console.log('┌──────────────────────────────────────────────┐');
   console.log('│   🏪  Kapurthala Online — Server Running!     │');
