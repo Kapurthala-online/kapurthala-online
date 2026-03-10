@@ -300,7 +300,7 @@ function setupVendorForm() {
   document.getElementById('adm-form-cancel')?.addEventListener('click', resetVendorForm);
 }
 
-function renderAddForm() {
+function setupImageUpload() { var u=document.getElementById("adm-v-image-upload"); var i=document.getElementById("adm-v-image"); var p=document.getElementById("adm-img-preview"); var w=document.getElementById("adm-img-preview-wrap"); var c=document.getElementById("adm-img-clear"); if(!u||u._bound)return; u._bound=true; u.addEventListener("change",function(){ var f=u.files[0]; if(!f)return; if(f.size>5*1024*1024){window.toast("Image must be under 5MB","error");return;} var r=new FileReader(); r.onload=function(e){ i.value=e.target.result; p.src=e.target.result; w.style.display="block"; window.toast("Photo ready!","success"); }; r.readAsDataURL(f); }); if(c)c.addEventListener("click",function(){ i.value=""; p.src=""; w.style.display="none"; u.value=""; }); }`nfunction renderAddForm() {
   if (!AdminState.editingId) resetVendorForm();
   setupVendorForm();
 }
@@ -582,3 +582,4 @@ function setEl(id, val) {
   const el = document.getElementById(id);
   if (el) el.textContent = val;
 }
+
